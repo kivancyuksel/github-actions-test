@@ -8,6 +8,11 @@ jobs:
         run: |
           pwd
           ls -a
+          # Some environment variables that are automatically set for us
+          echo "${GITHUB_SHA}"
+          echo "${GITHUB_REPOSITORY}"
+          echo "${GITHUB_WORKSPACE}"
+          echo "${{ github.token }}"
       - name: Checkout
         uses: actions/checkout@v1 # Clones your repo and checksout to the commit you pushed the last
       - name: List Files After Checkout
